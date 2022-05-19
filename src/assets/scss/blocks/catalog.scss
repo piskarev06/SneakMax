@@ -1,0 +1,261 @@
+.catalog {
+  padding: 60px 0;
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+
+    margin-bottom: 40px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  &__filter {
+    max-width: 280px;
+    width: 100%;
+    padding: 20px;
+
+    background: $bg-sec;
+    border: 1px solid #fff4ee;
+    border-radius: 4px;
+
+    @include breakpoint(992px) {
+      display: none;
+    }
+
+    & .filter {
+      &__btns {
+        width: 100%;
+      }
+
+      &__btn {
+        width: 100%;
+      }
+
+      &__apply {
+        margin-bottom: 20px;
+      }
+
+      &__reset {
+        line-height: 16px;
+
+        background: none;
+        border: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    line-height: 24px;
+
+    margin-bottom: 20px;
+  }
+
+  &__prop {
+    margin-bottom: 20px;
+  }
+
+  &__caption {
+    display: block;
+
+    line-height: 16px;
+
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    & .price {
+      &__wrapper {
+        position: relative;
+        display: flex;
+
+        border: 1px solid $gray;
+        border-bottom: none;
+        border-radius: 4px;
+
+        &::after {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%) translateX(50%) rotate(90deg);
+          right: 50%;
+          content: '';
+
+          width: 34px;
+
+          border: 1px solid $gray;
+        }
+      }
+
+      &__range {
+        margin-top: -5px;
+      }
+
+      &__input {
+        padding: 20px;
+        width: 50%;
+
+        font-size: 16px;
+        line-height: 16px;
+
+        text-align: center;
+
+        color: $text;
+        border: none;
+        background: none;
+      }
+    }
+  }
+
+  &__sizes {
+    & .sizes__table {
+      width: 100%;
+
+      & td {
+        padding: 20px 25px;
+
+        line-height: 16px;
+
+        border: 1px solid $text-sm;
+
+        cursor: pointer;
+        text-align: center;
+      }
+    }
+  }
+
+  &__goods {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+    & .list {
+      &__hover {
+        position: absolute;
+        top: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 40px;
+
+        width: 280px;
+        height: 293px;
+
+        background: rgba(255, 255, 255, 0.6);
+
+        opacity: 0;
+
+        transition: all 0.3s linear;
+      }
+
+      &__social {
+        cursor: pointer;
+
+        & svg circle {
+          transition: all 0.3s linear;
+        }
+
+        & svg path {
+          transition: all 0.3s linear;
+        }
+
+        &:hover {
+          & svg circle {
+            fill: #fff;
+          }
+
+          & svg path {
+            stroke: $text;
+          }
+        }
+      }
+
+      &__img {
+        margin-bottom: 10px;
+      }
+
+      &__name {
+        line-height: 16px;
+
+        margin-bottom: 10px;
+      }
+
+      &__price {
+        font-size: 20px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+
+    border-radius: 4px;
+
+    &:hover {
+      .list__hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-top: 60px;
+  }
+}
+
+.noUi-horizontal {
+  height: 4px;
+}
+
+.noUi-horizontal .noUi-handle.noUi-handle-upper {
+  right: -5px;
+  top: -8px;
+}
+
+.noUi-horizontal .noUi-handle.noUi-handle-lower {
+  right: 0;
+  top: -8px;
+}
+
+.noUi-connects {
+  background: $gray;
+}
+
+.noUi-connect {
+  background: $text;
+}
+
+.noUi-handle {
+  width: 5px !important;
+  height: 20px !important;
+  content: url('../images/catalog/handle.svg');
+
+  border: unset;
+  border-radius: unset;
+  background: unset;
+  box-shadow: unset;
+}
+
+.noUi-touch-area {
+  background-image: url('../images/catalog/handle.svg');
+  background-repeat: no-repeat;
+}

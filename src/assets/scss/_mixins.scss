@@ -1,0 +1,9 @@
+@mixin breakpoint($bp) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+// 1360
+
+// 900

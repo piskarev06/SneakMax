@@ -1,0 +1,162 @@
+.modal-order {
+  max-width: 580px;
+  width: 100%;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s linear;
+
+  max-height: 100%;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 7px;
+    background-color: rgba(77, 77, 77, 0.1);
+
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(77, 77, 77, 0.2);
+    border-radius: 5px;
+  }
+
+  &.modal--visible {
+    visibility: unset;
+    opacity: 1;
+  }
+
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  z-index: 50;
+
+  padding: 40px;
+  background: #fff;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+
+    color: #444b58;
+  }
+
+  &__number {
+    font-size: 14px;
+    line-height: 14px;
+
+    color: $gray;
+  }
+
+  &__content {
+    padding: 30px;
+
+    border: 1px solid $gray;
+    border-radius: 4px;
+
+    margin-bottom: 40px;
+  }
+
+  &__amount,
+  &__total-price {
+    font-size: 16px;
+    line-height: 16px;
+
+    color: $gray;
+
+    margin: 0 10px 20px 0;
+
+    & strong {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 16px;
+
+      color: #444b58;
+    }
+  }
+
+  &__details {
+    position: relative;
+
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      top: 9px;
+      left: 115px;
+      content: '';
+
+      width: 7px;
+      height: 3.5px;
+
+      background: url('../images/modals/arrow.svg');
+      background-repeat: no-repeat;
+
+      transform: rotate(180deg);
+
+      transition: all 0.3s linear;
+    }
+
+    &[open] summary {
+      margin-bottom: 17px;
+    }
+
+    &[open] ul {
+      animation: slide 0.3s;
+    }
+
+    &[open]::after {
+      transform: rotate(0deg);
+    }
+  }
+
+  &__summary {
+    color: #444b58;
+
+    list-style: none;
+  }
+
+  &__input {
+    width: 100%;
+
+    background: #f7f7f7;
+    border-radius: 4px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__btn {
+    margin-top: 30px;
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+}

@@ -1,0 +1,91 @@
+@import 'mixins';
+@import 'vars';
+@import 'vendor/reset';
+@import 'vendor/nouislider';
+
+html {
+  font-size: 20x;
+}
+
+body {
+  font-family: 'Noto Sans Simplified Chinese', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: $text;
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.quiz {
+  background: #fff4ee;
+
+  @include breakpoint(768px) {
+    padding: 100px 0;
+  }
+}
+
+.modal {
+  position: relative;
+  z-index: 100;
+
+  @include breakpoint(768px) {
+    padding: 20px !important;
+  }
+}
+
+.modal-overlay {
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  z-index: 30;
+
+  opacity: 0;
+  background: rgba(68, 75, 88, 0.7);
+
+  transition: all 0.3s linear;
+
+  &.modal-overlay--visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
+/* Blocks */
+@import 'blocks/header';
+@import 'blocks/container';
+@import 'blocks/btn';
+@import 'blocks/intro';
+@import 'blocks/catalog';
+@import 'blocks/about';
+@import 'blocks/team';
+@import 'blocks/faq';
+@import 'blocks/contacts';
+@import 'blocks/insta';
+@import 'blocks/input';
+@import 'blocks/footer';
+@import 'blocks/modal-cart';
+@import 'blocks/modal-order';
+@import 'blocks/modal-good';
+@import 'blocks/tooltip';

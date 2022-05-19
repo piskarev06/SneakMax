@@ -1,0 +1,84 @@
+.team {
+  position: relative;
+
+  padding: 60px 0;
+  background: $bg;
+
+  z-index: 10;
+
+  &__decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    @include breakpoint(992px) {
+      text-align: right;
+
+      & img {
+        max-width: 90%;
+      }
+    }
+    @include breakpoint(768px) {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+
+    color: #fff;
+
+    margin-bottom: 40px;
+
+    @include breakpoint(768px) {
+      font-size: 26px;
+
+      margin-bottom: 30px;
+    }
+    @include breakpoint(480px) {
+      font-size: 24px;
+
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 40px 20px;
+
+    @include breakpoint(1250px) {
+      justify-content: center;
+    }
+
+    & .list {
+      &__img {
+        margin-bottom: 20px;
+
+        & img {
+          border-radius: 5px;
+        }
+      }
+
+      &__name {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 24px;
+
+        color: #fff;
+
+        margin-bottom: 20px;
+      }
+
+      &__role {
+        line-height: 16px;
+
+        color: #fff;
+      }
+    }
+  }
+}

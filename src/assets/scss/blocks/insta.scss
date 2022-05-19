@@ -1,0 +1,123 @@
+.insta {
+  padding: 60px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    @include breakpoint(1100px) {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+
+      gap: 100px;
+    }
+  }
+
+  &__form {
+    flex-shrink: 0;
+
+    padding: 40px 20px;
+    width: 380px;
+
+    color: #fff;
+    text-align: center;
+    background: $bg;
+
+    border-radius: 4px;
+
+    @include breakpoint(480px) {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    max-width: 260px;
+    margin: 0 auto;
+
+    line-height: 16px;
+
+    margin-bottom: 40px;
+  }
+
+  &__input {
+    width: 100%;
+
+    margin-bottom: 10px;
+  }
+
+  &__btn {
+    width: 100%;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - (380px + 20px));
+
+    @include breakpoint(1100px) {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 160px);
+
+    gap: 15px;
+
+    @include breakpoint(480px) {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    border-radius: 4px;
+
+    a {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    &:nth-child(3) {
+      grid-column: 2 span;
+      grid-row: 2 span;
+    }
+
+    &:nth-child(2) {
+      grid-row: 2;
+    }
+  }
+}

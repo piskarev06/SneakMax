@@ -1,0 +1,37 @@
+.footer {
+  padding: 28px 0;
+  background: $text;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(992px) {
+      flex-direction: column;
+
+      gap: 50px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+
+    @include breakpoint(992px) {
+      flex-wrap: wrap;
+
+      gap: 15px;
+    }
+
+    & .nav__link {
+      font-size: 14px;
+      line-height: 14px;
+
+      color: #fff;
+    }
+  }
+}
